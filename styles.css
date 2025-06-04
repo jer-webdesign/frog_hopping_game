@@ -1,0 +1,73 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #def3f6;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: repeat(4, 120px);
+  background-image: url("images/splash.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.tile {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.lily-pad {
+  width: 100px;
+  height: 100px;
+  background-image: url("images/lily_pad.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 43px;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  transition: filter 0.5s ease;
+}
+
+.lily-pad.active {
+  filter: hue-rotate(30deg) brightness(1.1);
+  top: 48px;
+  width: 100px;
+  height: 100px;
+}
+
+.frog {
+  width: 90px;
+  height: 90px;
+  background-image: url("images/frog.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 12%;
+}
+

@@ -1,0 +1,147 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #def3f6;
+  margin: 0;
+  font-family: sans-serif;
+  /* min-height: 100vh; */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 35%;
+  max-width: 1000px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 10px;
+  background-image: url("images/splash.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.tile {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.lily-pad {
+  width: 60%;
+  height: 60%;
+  background-image: url("images/lily_pad.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: filter 0.5s ease;
+}
+
+.lily-pad.active {
+  filter: hue-rotate(30deg) brightness(1.1);
+  top: 52%;
+}
+
+.frog {
+  width: 60%;
+  height: 60%;
+  background-image: url("images/frog.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 12%;
+  left: 10%;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .area {
+    width: 80%;
+    max-width: 500px;
+  }    
+  h1 {
+    font-size: 1.25rem;
+  }
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablets (max-width: 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .area {
+    width: 60%;
+    max-width: 500px;
+  }  
+  h1 {
+    font-size: 1.5rem;
+  }
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Small Desktops (max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .area {
+    width: 80%;
+    max-width: 800px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large Desktops (min-width: 1200px) */
+@media (min-width: 1200px) {
+  .area {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .lily-pad, .frog {
+    width: 65%;
+    height: 65%;
+  }
+}
+
